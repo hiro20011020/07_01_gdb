@@ -1,25 +1,24 @@
 #include <stdio.h>
 
-int myfunc(int x, int y)
-{
-    int z;
+int main() {
+    int numbers[5];  // 長さ5の整数型配列
 
-    z = 2 * x - y;
-    return z;
-}
+    printf("Enter 5 numbers:\n");
 
-int main(void)
-{
-    int a[5] = {1, 2, 3, 4, 5};
-    int b, c;
+    // ユーザーからの入力を受け取り、配列に格納する
+    for (int i = 0; i < 5; i++) {
+        printf("Number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+    }
 
-    c = a[1] + a[5];
+    int sum = 0;
 
-    b = c + a[1];
+    // 配列の要素を合計する
+    for (int i = 0; i < 5; i++) {
+        sum += numbers[i];
+    }
 
-    b = myfunc(b, c);
-
-    printf("b=%d\n", b);
+    printf("Sum: %d\n", sum);
 
     return 0;
 }
